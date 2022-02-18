@@ -1,0 +1,7 @@
+NetworkManager[787]: <info>  [1641143513.6300] manager: NetworkManager state is now CONNECTED_GLOBAL
+ModemManager[888]: <info>  [base-manager] couldn't check support for device '/sys/devices/pci0000:00/0000:00:11.0/0000:02:01.0': not supported by any plugin
+NetworkManager[787]: <info>  [1641143525.2836] agent-manager: agent[309b75a45410103f,:1.81/org.gnome.Shell.NetworkAgent/1000]: agent registered
+nautilus[2985]: Called "net usershare info" but it failed: Failed to execute child process “net” (No such file or directory)
+rsyslogd: [origin software="rsyslogd" swVersion="8.2102.0" x-pid="805" x-info="https://www.rsyslog.com"] rsyslogd was HUPed
+NetworkManager[787]: <info>  [1641144412.7248] dhcp4 (ens33): state changed bound -> extended, address=192.168.186.128
+NetworkManager[787]: <info>  [1641145312.7096] dhcp4 (ens33): state changed extended -> extended, address=192.168.186.128

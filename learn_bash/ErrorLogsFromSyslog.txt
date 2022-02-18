@@ -1,0 +1,24 @@
+gnome-session[1054]: gnome-session-binary[1054]: WARNING: Failed to upload environment to systemd: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Name "org.freedesktop.systemd1" does not exist
+gnome-session-binary[1054]: WARNING: Failed to upload environment to systemd: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Name "org.freedesktop.systemd1" does not exist
+gnome-session[1054]: gnome-session-binary[1054]: WARNING: Failed to reset failed state of units: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Name "org.freedesktop.systemd1" does not exist
+gnome-session-binary[1054]: WARNING: Failed to reset failed state of units: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Name "org.freedesktop.systemd1" does not exist
+gnome-session[1054]: gnome-session-binary[1054]: WARNING: Falling back to non-systemd startup procedure due to error: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Name "org.freedesktop.systemd1" does not exist
+gnome-session-binary[1054]: WARNING: Falling back to non-systemd startup procedure due to error: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Name "org.freedesktop.systemd1" does not exist
+gsd-sharing[1244]: Failed to StopUnit service: GDBus.Error:org.freedesktop.DBus.Error.Spawn.ChildExited: Process org.freedesktop.systemd1 exited with status 1
+gsd-sharing[1244]: message repeated 2 times: [ Failed to StopUnit service: GDBus.Error:org.freedesktop.DBus.Error.Spawn.ChildExited: Process org.freedesktop.systemd1 exited with status 1]
+gnome-shell[1096]: Error looking up permission: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for geolocation
+org.gnome.Shell.desktop[1416]: Errors from xkbcomp are not fatal to the X server
+gnome-session[1573]: gnome-session-binary[1573]: GnomeDesktop-WARNING: Could not create transient scope for PID 1581: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 1581 does not exist.
+gnome-session-binary[1573]: GnomeDesktop-WARNING: Could not create transient scope for PID 1581: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 1581 does not exist.
+gnome-session[1573]: gnome-session-binary[1573]: GnomeDesktop-WARNING: Could not create transient scope for PID 1698: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 1698 does not exist.
+gnome-session-binary[1573]: GnomeDesktop-WARNING: Could not create transient scope for PID 1698: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 1698 does not exist.
+gnome-session[1573]: gnome-session-binary[1573]: GnomeDesktop-WARNING: Could not create transient scope for PID 1739: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 1739 does not exist.
+gnome-session[1573]: gnome-session-binary[1573]: GnomeDesktop-WARNING: Could not create transient scope for PID 1753: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 1753 does not exist.
+gnome-session-binary[1573]: GnomeDesktop-WARNING: Could not create transient scope for PID 1739: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 1739 does not exist.
+gnome-session-binary[1573]: GnomeDesktop-WARNING: Could not create transient scope for PID 1753: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 1753 does not exist.
+at-spi2-registr[1689]: Failed to register client: GDBus.Error:org.gnome.SessionManager.AlreadyRegistered: Unable to register client
+gnome-shell[1589]: Error looking up permission: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for geolocation
+gnome-shell[1950]: Errors from xkbcomp are not fatal to the X server
+snap-store[1817]: internal error: failed, but no error code: cancelled-priority
+snap-store[1817]: not handling error failed for action refresh: E: Failed to fetch http://us.archive.ubuntu.com/ubuntu/dists/impish/InRelease  #012E: Failed to fetch http://us.archive.ubuntu.com/ubuntu/dists/impish-updates/InRelease  #012E: Failed to fetch http://us.archive.ubuntu.com/ubuntu/dists/impish-backports/InRelease  #012E: Failed to fetch http://security.ubuntu.com/ubuntu/dists/impish-security/InRelease  #012E: Some index files failed to download. They have been ignored, or old ones used instead.
+pulseaudio[1449]: GetManagedObjects() failed: org.freedesktop.DBus.Error.TimedOut: Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)

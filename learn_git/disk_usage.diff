@@ -1,0 +1,23 @@
+3c3,4
+< import psutil
+---
+> import shutil
+> import sys
+6c7
+< 	du = shutil.dick_usage(disk)
+---
+> 	du = shutil.disk_usage(disk)
+16c17
+< if not check_disk_usage("/", 2*2*30,10):
+---
+> if not check_disk_usage("/", 2,10):
+18c19
+< 	return 1
+---
+> 	sys.exit(1)
+21c22
+< return 0
+\ No newline at end of file
+---
+> sys.exit(0)
+\ No newline at end of file
