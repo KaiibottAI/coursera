@@ -287,3 +287,138 @@ if __name__ == "__main__":
     pool = Pool(multiprocessing.cpu_count())  
     pool.apply(subprocess.call, args=(["rsync", "-arq", src, dest],))
 ```
+
+
+## Week 3
+
+### What do do when you can't fix the program?
+
+**Wrapper** - A function or program that provides a compatibility layer between two functions or programs, so they can work together
+Example: An application used to use XML format for input. An update now uses YAML format. A script can be used to format data before input.
+Example: A service is needed to run prior to the script. A second service can be set to check for compatibility between the apps.
+
+Check Port listening
+```
+ss -lpnut
+Netid   State     Recv-Q    Send-Q       Local Address:Port        Peer Address:Port   Process   
+udp     UNCONN    0         0                  0.0.0.0:5353             0.0.0.0:*                
+udp     UNCONN    0         0            127.0.0.53%lo:53               0.0.0.0:*                
+udp     UNCONN    0         0                  0.0.0.0:631              0.0.0.0:*                
+udp     UNCONN    0         0                  0.0.0.0:47786            0.0.0.0:*                
+udp     UNCONN    0         0                     [::]:5353                [::]:*                
+udp     UNCONN    0         0                     [::]:35557               [::]:*                
+tcp     LISTEN    0         4096         127.0.0.53%lo:53               0.0.0.0:*                
+tcp     LISTEN    0         128              127.0.0.1:631              0.0.0.0:*                
+tcp     LISTEN    0         128                  [::1]:631                 [::]:*
+```
+
+### Accessing Invalid Memory
+
+Accessing invalid memory means that the process tried to access a portion of the system's memory that wasn't assigned to it.
+
+**Pointers** - Variables that stroe memory addresses
+Common programming errors that lead to segmentation faults or segfaults include forgetting to initialize a variable, trying to access a list element outside of the valid range, trying to use a portion of memory after having given it back, and trying to write more data than the requested portion of memory can hold.
+**Valgrind** A tool that can tell us if the code is doing any invlalid operations, not matter if it crashes or not
+**Dr. Memory** Similar tool that is available to Linux and Windows
+
+### Unhanlded Error and Exceptions
+
+**Traceback** - Shows the lines of the different functions that were being executed when the problem happened.
+**pdb** - Python debugger
+**printf debugging** - Debugging code with print statements along the way to track where you are and what the variables may be doing
+
+### Fixing Someone Else's Code
+
+### Debugging a Segmentation Fault
+
+**Core File** Stores all the information related to the crash so that we or somoene else can debug what is going on
+To generate these files, run the following
+
+```bash
+ulimit -c unlimited
+```
+
+You can run these core files thru a debugger
+```bash
+gdb -c core
+```
+While inside gdb, you can use `backtrace`,`list`, and `up` to search thru the core file.
+`backtrace` - shows where the error occured
+`list` - shows the surrounding lines of code that may have caused the issue
+`Off-by-one error` - common error worth keeping in mind happens often when iterating through arrays or other collections, and is often fixed by changing the less than or equal sign in our for loop to be a strictly less than sign
+
+### Debugging a Python Crash
+
+`pdb3` - Python Debugger
+Example:
+```
+pdb3 %pythonscript% 
+```
+`breakpoint` - In Debuggers, this lets the script run unitl a certain line of code is executed
+`watchpoint` - in Debuggers, this lets the script run and watch for a variable to change
+
+### Crashes in Complex Systems
+
+### Communication and Documentation
+
+## Week 4
+
+### Managing Resources
+
+When making scripts, first make the script work. Optimization comes in once the script has functionality. Example being your script takes too much RAM that it doesn't need. Work to optimize the script to remove the RAM resources necessary to have a "faster" script. Another Example is when working with scripts, and its taking too long, try to look thru how the script is operating with the previous tools. For loops can be taxing on the system if its making too many calls in the loop when it could just use one call to store a variable in RAM.
+
+### Memory Leaks and How to Prevent Them
+
+`Memory Leak` - A chunk of memory that is no longer needed is not released
+Languages request memory for variables to hold onto.
+A tool called `Garbage Collector` is in charge of freeing memory that is no longer in use.
+
+Example: You create a dictionary inside a function, use it to process a text file, calculate the frequency of the words in the file, and then return the word that was used the most frequently.
+When the function returns, the dictionary is not referenced anymore.
+So the garbage collector can detect this and give back the unused memory, but if the function returns the whole dictionary, then it's still in use, and the memory won't be given back until that stops being the case.
+When our code keeps variables pointing to the data in memory, like a variable in the code itself, or an element in a list or a dictionary, the garbage collector won't release that memory.
+
+### Managing Disk Space
+
+Managing Disk space can be for a few reasons
+
+ - Installed Binaries / libraries
+ - Data stored by the app
+ - Cached info
+ - Logs
+ - Temp files
+ - Backups
+
+### Network Saturation
+
+`latency` - The time it takes to respond
+`bandwidth` - The amount of data that can come accross in a second
+
+Example:
+
+If the web server is hosted somewhere across the ocean, the latency might be a 100 milliseconds or so.
+That's the time it takes for your request to reach the server.
+The server will then generate a response and send it back to you.
+The first bytes of the response will again take a 100 milliseconds to zap across the pond to your computer.
+Once the response is on its way, the time it takes for the rest of the data to arrive is determined by the bandwidth.
+If the available bandwidth between the two points is 10 megabits per second, you'll be able to receive 1.25 megabytes every second.
+So for a website of about one megabyte of content, that large initial latency will be noticeable, since it's an extra 20 percent on top of the total time to download it.
+But if the content is 10 megabytes or more, the initial latency will be less than five percent of the total time to download it.
+
+To find what apps are using network resources, you can use `iftop`
+
+### Dealing with Memory Leaks
+
+`uxterm` Terminal
+`Scroll buffer` - Feature that lets us scroll up and see the things that we executed and their output (this uses memory)
+
+`memory_profiler` - Module for python (there are more than this) that will help find what actions in our script are taking memory and how it is being used.
+
+`Decorator` - Used in python to add extra behavior to functions without having to modify the code
+
+### Getting to the Important Tasks
+
+`Eisenhower Decision Matrix` - Split tasks into two different categories. Important and Urgent.
+`Technical debt` - Pending work that accumulates when we choose a quick-and-easy solution instead of applying a sustainable long-term one
+Example: Applying short term fixes, and not applying long term fixes. The longer that short term fix exists, the larger the techinical debt.
+
