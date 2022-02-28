@@ -1,5 +1,3 @@
-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
-
 Week4-Notes.md
 
 Learning git with Coursera: Introduction to Git and GitHub (Sponsered by Google)
